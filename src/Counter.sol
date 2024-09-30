@@ -50,7 +50,8 @@ contract Counter is BaseHook {
     // -----------------------------------------------
 
     function beforeSwap(address, PoolKey calldata key, IPoolManager.SwapParams calldata, bytes calldata)
-        external
+        public
+        virtual
         override
         returns (bytes4, BeforeSwapDelta, uint24)
     {
