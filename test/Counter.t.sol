@@ -45,7 +45,17 @@ contract CounterTest is Test, Fixtures {
         deployCodeTo("Counter.sol:Counter", constructorArgs, flags);
         hook = flags;
         counter = Counter(hook);
-        console.log("Counter address: ", address(counter));
+    }
+
+    function assignPool() public virtual {
+        // Create the pool
+        key = PoolKey(currency0, currency1, 3000, 60, IHooks(counter));
+        poolId = key.toId();
+        manager.initialize(key, SQRT_PRICE_1_1, ZERO_BYTES);
+    }
+
+    function setLiquidityAmount() public virtual returns (uint128 amount) {
+        amount = 100e18;
     }
 
     function setUp() public {
@@ -56,17 +66,13 @@ contract CounterTest is Test, Fixtures {
         deployAndApprovePosm(manager);
 
         setting();
-
-        // Create the pool
-        key = PoolKey(currency0, currency1, 3000, 60, IHooks(counter));
-        poolId = key.toId();
-        manager.initialize(key, SQRT_PRICE_1_1, ZERO_BYTES);
+        assignPool();
 
         // Provide full-range liquidity to the pool
         tickLower = TickMath.minUsableTick(key.tickSpacing);
         tickUpper = TickMath.maxUsableTick(key.tickSpacing);
 
-        uint128 liquidityAmount = 100e18;
+        uint128 liquidityAmount = setLiquidityAmount();
 
         (uint256 amount0Expected, uint256 amount1Expected) = LiquidityAmounts.getAmountsForLiquidity(
             SQRT_PRICE_1_1,
