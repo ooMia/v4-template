@@ -47,7 +47,6 @@ contract GasChangedByMessengerHookTest is CounterTest {
         hook = flags;
         gasChangedByMessengerHook = GasChangedByMessengerHook(hook);
         counter = Counter(hook);
-        console.log("Hook address: ", address(gasChangedByMessengerHook));
     }
 
     function testGasChangedByMessengerHook() public {

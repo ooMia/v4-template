@@ -55,7 +55,6 @@ contract ExternalContractTooMuchGasHookTest is CounterTest {
         hook = flags;
         externalContractTooMuchGasHook = ExternalContractTooMuchGasHook(hook);
         counter = Counter(hook);
-        console.log("Hook address: ", address(externalContractTooMuchGasHook));
     }
 
     function testExternalContractTooMuchGasHook() public {

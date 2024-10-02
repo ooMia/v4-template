@@ -1,7 +1,9 @@
 {
   "solidity.formatter": "forge",
-  "cSpell.words": ["posm"],
+  "cSpell.words": [
+    "posm"
+  ],
   "[solidity]": {
-    "editor.hover.enabled": false
+    "editor.hover.enabled": true
   }
 }
