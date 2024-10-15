@@ -1,7 +1,7 @@
 {
-  "name": "@oomia/upside-cookie-land",
-  "version": "2.0.0",
-  "description": "Upside Cookie Land",
+  "name": "@oomia/template",
+  "version": "0.0.1",
+  "description": "Template",
   "directories": {
     "lib": "lib",
     "test": "test",
@@ -18,19 +18,11 @@
     "info": "cast client",
     "docs": "bash docs.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ooMia/Upside_Cookie_Land.git"
-  },
   "keywords": [
     "upside"
   ],
   "author": "ooMia",
   "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/ooMia/Upside_Cookie_Land/issues"
-  },
-  "homepage": "https://github.com/ooMia/Upside_Cookie_Land#readme",
   "devDependencies": {
     "prettier": "^3.3.3",
     "prettier-plugin-solidity": "^1.4.1"
