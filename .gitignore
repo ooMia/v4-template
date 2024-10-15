@@ -1,0 +1,12 @@
+# Compiler files
+cache/
+out/
+
+# Ignores broadcast logs
+broadcast
+
+# environments
+node_modules/
+.env
+.gas-snapshot
+.vscode
